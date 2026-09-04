@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Expense Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header><div><small>PERSONAL FINANCE</small><h1>Expense Tracker</h1></div><button id="clear">Clear all</button></header>
+
+<section class="stats">
+<div class="card balance"><span>Current Balance</span><b id="balance">₹0</b><small id="note">Add your first transaction</small></div>
+<div class="card"><span>Total Income</span><b id="income">₹0</b><small>Money received</small></div>
+<div class="card"><span>Total Expenses</span><b id="expense">₹0</b><small>Money spent</small></div>
+</section>
+
+<section class="grid">
+<div class="panel">
+<small>NEW ENTRY</small><h2>Add transaction</h2>
+<form id="form">
+<label>Description<input id="desc" placeholder="e.g. Grocery shopping" required maxlength="60"></label>
+<div class="two"><label>Amount<input id="amount" type="number" min="1" step=".01" placeholder="500" required></label>
+<label>Type<select id="type"><option value="expense">Expense</option><option value="income">Income</option></select></label></div>
+<div class="two"><label>Category<select id="category">
+<option>Food</option><option>Transport</option><option>Shopping</option><option>Bills</option><option>Education</option><option>Entertainment</option><option>Salary</option><option>Other</option>
+</select></label>
+<label>Date<input id="date" type="date" required></label></div>
+<button class="primary">+ Add transaction</button>
+</form>
+</div>
+
+<div class="panel">
+<div class="heading"><div><small>ACTIVITY</small><h2>Transactions</h2></div>
+<select id="filter"><option value="all">All</option><option value="income">Income</option><option value="expense">Expenses</option></select></div>
+<div id="list"></div><div id="empty" class="empty"><strong>No transactions yet</strong><p>Add an income or expense to see it here.</p></div>
+</div>
+</section>
+<footer>Built with HTML, CSS & JavaScript · Data is saved in your browser</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
